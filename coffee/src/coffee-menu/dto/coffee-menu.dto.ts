@@ -1,8 +1,9 @@
 import { IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { BaseDto } from '../../repository/dto/base.dto';
 
-export class OrderDto extends BaseDto {
+export class CoffeeMenuDto extends BaseDto {
   // @see: Dto에서 프로퍼티를 정의하는 법이 궁금하면 BaseDto 파일을 봐주세요
+
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -15,11 +16,11 @@ export class OrderDto extends BaseDto {
   @IsNotEmpty()
   ice: boolean;
 
-  @IsNumber()
+  @IsBoolean()
   @IsNotEmpty()
-  count: number;
+  hot: boolean;
   // - name: string (required)
   // - price: number (required)
   // - ice: boolean (required)
-  // - count: number (required)
+  // - hot: number (required)
 }

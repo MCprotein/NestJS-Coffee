@@ -10,7 +10,10 @@ import { CoffeeMenuDto } from './dto/coffee-menu.dto';
 // 1. COFFEE_REPOSITORY를 토큰값으로 해주세요
 // 2. useValue에서는 new Repository<CoffeeMenuDto>()를 사용합니다.
 @Module({
-  controllers: [],
-  providers: [],
+  controllers: [CoffeeMenuController],
+  providers: [
+    CoffeeMenuService,
+    { provide: COFFEE_REPOSITORY, useValue: new Repository<CoffeeMenuDto>() },
+  ],
 })
 export class CoffeeMenuModule {}

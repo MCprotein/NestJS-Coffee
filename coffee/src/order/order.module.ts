@@ -10,7 +10,10 @@ import { ORDER_REPOSITORY } from '../constants';
 // 1. ORDER_REPOSITORY를 토큰값으로 해주세요
 // 2. useValue에서는 new Repository<OrderDto>()를 사용합니다.
 @Module({
-  providers: [],
-  controllers: [],
+  providers: [
+    OrderService,
+    { provide: ORDER_REPOSITORY, useValue: new Repository<OrderDto>() },
+  ],
+  controllers: [OrderController],
 })
 export class OrderModule {}
